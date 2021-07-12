@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Project_01.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StuNameC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StuNameE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StuIdno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StuEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StuGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StuBirthday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StuYear)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StuNameC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StuNameE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StuIdno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StuEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StuGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StuBirthday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StuYear)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StuId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.StuId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StuId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
