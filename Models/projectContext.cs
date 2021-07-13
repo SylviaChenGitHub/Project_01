@@ -43,7 +43,7 @@ namespace Project_01.Models
                     .HasColumnName("STU_ID");
 
                 entity.Property(e => e.StuBirthday)
-                    .HasColumnType("datetime")
+                    .HasMaxLength(50)
                     .HasColumnName("STU_BIRTHDAY");
 
                 entity.Property(e => e.StuEmail)
