@@ -35,7 +35,9 @@
             </div>
             <div class="form-group">
                 <label asp-for="StuGender" class="control-label"></label>
-                <input asp-for="StuGender" class="form-control" />
+                @*<input asp-for="StuGender" class="form-control" />*@
+                <select asp-for="StuGender" class="form-control" asp-items="Html.GetEnumSelectList<Student.Gender>()">
+                </select>
                 <span asp-validation-for="StuGender" class="text-danger"></span>
             </div>
             <div class="form-group">
