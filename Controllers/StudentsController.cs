@@ -57,6 +57,7 @@ namespace Project_01.Controllers
         {
             if (ModelState.IsValid)
             {
+                student.StuId = "S" + student.StuGender + student.StuYear + DateTime.Now.ToString("yyyyMMddHHmmss");
                 _context.Add(student);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
