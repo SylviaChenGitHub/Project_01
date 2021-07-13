@@ -39,6 +39,8 @@ namespace Project_01.Controllers
                 return NotFound();
             }
 
+            student.StuGender = student.StuGender == "M" ? "男" : student.StuGender == "F" ? "女" : "其他";
+
             return View(student);
         }
 
